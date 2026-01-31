@@ -353,3 +353,9 @@ footer {
   border-radius: 5px;
   text-decoration: none;
 }
+#btn1 {
+  padding: 5px;
+  background-color: #003366;
+  color: white;
+  border-radius: 5px;
+}

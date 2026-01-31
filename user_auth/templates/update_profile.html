@@ -1,18 +1,37 @@
-{% extends 'main.html' %}
-{% block content %}
+{% extends 'main.html' %} {% block content %}
 <div class="main-content">
-    <h2>Update Profile</h2>
+  <h2>Update Profile</h2>
+  <div class="container-1">
     <form action="" method="POST">
-        {% csrf_token %}
-        <label for="">FirstName</label>
-        <input type="text" name="first_name" id="" value="{{old_data.first_name}}"> <br>
-        <label for="">LastName</label>
-        <input type="text" name="last_name" id="" value="{{old_data.last_name}}"> <br>
-        <label for="">Email</label>
-        <input type="email" name="email" id="" value="{{old_data.email}}"> <br>
-        <label for="">Username</label>
-        <input type="text" name="username" id="" value="{{old_data.username}}"> <br>
-        <input type="submit" value="Submit">
+      {% csrf_token %}
+      <label for="">FirstName</label>
+      <input
+        type="text"
+        name="first_name"
+        id=""
+        value="{{old_data.first_name}}"
+      />
+      <br />
+      <br />
+      <label for="">LastName</label>
+      <input
+        type="text"
+        name="last_name"
+        id=""
+        value="{{old_data.last_name}}"
+      />
+      <br />
+      <br />
+      <label for="">Email</label>
+      <input type="email" name="email" id="" value="{{old_data.email}}" />
+      <br />
+      <br />
+      <label for="">Username</label>
+      <input type="text" name="username" id="" value="{{old_data.username}}" />
+      <br />
+      <br />
+      <input type="submit" value="Submit" id="btn1" />
     </form>
+  </div>
 </div>
 {% endblock content %}
