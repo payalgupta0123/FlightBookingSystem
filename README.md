@@ -77,8 +77,8 @@ http://127.0.0.1:8000/
 
 ### 🔐 Reset Password
 
+<img src="screenshots/reset_password.png" width="700"/>
 <img src="screenshots/reset_password_1.png" width="700"/>
-<img src="screenshots/reset_password_2.png" width="700"/>
 
 ## 👩‍💻 Author
 
