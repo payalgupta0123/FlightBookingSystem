@@ -1,0 +1,24 @@
+{% extends 'main.html' %}
+{% block content %}
+
+<div class="main-content">
+    <div class="register-box">
+        <h2>Login Here</h2> <br>
+        {% if status %}
+        <h2 style="color:red">Wrong Credential!! Plz try again</h2>
+        {% endif %}
+        <form action="" method="POST">
+            {% csrf_token %}
+            <label for="">Username</label>
+            <input type="text" name="username" id="">
+
+            <label>Password</label>
+            <input type="password" name="password" required>
+
+            <button type="submit" class="submit-btn">Login</button>
+        </form>
+        <p>didn't have an account? <b><a href="{% url 'register' %}">Signup</a></b></p>
+    </div>
+</div>
+
+{% endblock content %}

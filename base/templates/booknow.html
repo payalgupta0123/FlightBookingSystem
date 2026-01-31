@@ -1,0 +1,145 @@
+{% extends 'main.html' %} {% block content %} {% load static %}
+<center>
+  {% if error %}
+  <p
+    style="
+      color: white;
+      background: red;
+      padding: 10px;
+      border-radius: 6px;
+      margin: 55px;
+      width: 60%;
+    "
+  >
+    {{ error }}
+  </p>
+  {% endif %}
+
+  <div class="book-now-card">
+    <div class="book-now">
+      <div class="title-card1">
+        <img
+          src="{% static 'images/flight.png' %}"
+          alt="Flight_img"
+          height="70px"
+          width="70px"
+        />
+      </div>
+      <div class="title-card2">
+        <h2>Plane Ticket Booking Form</h2>
+      </div>
+    </div>
+
+    <div class="booking-form-detail">
+      <form action="" method="POST" id="booking-form">
+        {% csrf_token %}
+
+        <p>Flight Details</p>
+        <hr class="booking-horizontal" />
+
+        <label>Flight Company:</label>
+        <input
+          type="text"
+          name="flight_company"
+          value="{{data.airline}}"
+          readonly
+        />
+        <br />
+
+        <label>Flight Name:</label>
+        <input
+          type="text"
+          name="flight_name"
+          value="{{data.flight_name}}"
+          readonly
+        />
+        <br />
+
+        <label>Flight Number:</label>
+        <input
+          type="text"
+          name="flight_number"
+          value="{{data.flight_no}}"
+          readonly
+        />
+        <br />
+
+        <label>From:</label>
+        <input
+          type="text"
+          name="from"
+          value="{{data.departure_city}}"
+          readonly
+        />
+        <br />
+
+        <label>To:</label> <br />
+        <input
+          type="text"
+          name="to"
+          value="{{data.destination_city}}"
+          readonly
+        />
+        <br />
+
+        <label>Departure Time</label>
+        <input
+          type="time"
+          name="departure_time"
+          value="{{data.departure_time|time:'H:i'}}"
+          readonly
+        />
+        <br />
+
+        <label>Departure Date</label>
+        <input
+          type="date"
+          name="departure_date"
+          value="{{data.date|date:'Y-m-d'}}"
+          readonly
+        />
+        <br />
+
+        <label>Ticket Price</label>
+        <input
+          type="number"
+          name="ticket_price"
+          value="{{data.price}}"
+          readonly
+        />
+        <br />
+
+        <br />
+
+        <p>Passenger Details</p>
+        <hr class="booking-horizontal" />
+
+        <label>Your Name:</label>
+        <input type="text" name="name" required /> <br />
+
+        <label>Email:</label>
+        <input type="email" name="email" required /> <br />
+
+        <label>Phone:</label>
+        <input type="number" name="phone" required /> <br />
+
+        <label>Adhaar Number:</label>
+        <input type="number" name="adhaar" required /> <br />
+
+        <label>Age:</label> <br />
+        <input type="number" name="age" required /> <br />
+
+        <label>Seat Class:</label>
+        <select name="seat_class" required>
+          <option value="" disabled selected>Select option</option>
+          {% for i in seat_classes %}
+          <option value="{{i.class_name}}">{{i.class_name}}</option>
+          {% endfor %}
+        </select>
+        <br /><br />
+        <input type="submit" value="Book Ticket" />
+      </form>
+    </div>
+  </div>
+</center>
+{% endblock content %}

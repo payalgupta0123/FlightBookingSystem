@@ -1,0 +1,41 @@
+{% extends 'main.html' %}
+{% block content %}
+<center>
+    <div class="home">
+        <div class="home-card1">
+            <form action="" method="GET">
+                <input type="text" name="from_city" placeholder="Enter Departure City" id="t1">
+                <input type="text" name="to_city" placeholder="Enter Destination City" id="t1"> <br>
+                <input type="submit" value="Search Flight" class="search-btn">
+            </form>
+        </div>
+        <hr class="horizontal-line">
+
+        <div class="flight-detail">
+            <h2>Available Flights</h2>
+
+            {% for f in flights %}
+            <div class="flight-card">
+                <div class="flight-card1">
+                    <h3>{{ f.airline }}</h3>
+                    <p>{{ f.flight_name }} | Flight No: {{ f.flight_no }}</p>
+
+                    <p><b>From:</b> {{ f.departure_city }}</p>
+                    <p><b>To:</b> {{ f.destination_city }}</p>
+                </div>
+                <div class="flight-card2">
+                    <p><b>Departure:</b> {{ f.departure_time }}</p>
+                    <p><b>Date:</b> {{ f.date }}</p>
+                    <p><b>Price:</b> ₹{{ f.price }}</p>
+
+                    <a href="{% url 'bookNow' f.id %}" class="book-btn">Book Now</a>
+                </div>
+
+            </div>
+            {% empty %}
+            <p>No Flights found</p>
+            {% endfor %}
+        </div>
+
+</center>
+{% endblock content %}

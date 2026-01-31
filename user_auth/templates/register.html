@@ -1,0 +1,39 @@
+{% extends 'main.html' %}
+{% block content %}
+
+<div class="main-content">
+    <div class="register-box">
+        <h2>Register Here</h2> <br>
+        {% if status %}
+        <h2 style="color:red">Username is already exist!!!Plz try to remember </h2>
+        {% endif %}
+        {% if error1 %}
+        <h2 style="color: green">Password is not matching !! Plz try again</h2>
+        {% endif %}
+        <form action="" method="POST">
+            {% csrf_token %}
+
+            <label>First Name</label>
+            <input type="text" name="firstname" required>
+
+            <label>Last Name</label>
+            <input type="text" name="lastname" required>
+
+            <label>Email</label>
+            <input type="email" name="email" required>
+
+            <label for="">Username</label>
+            <input type="text" name="username" id="">
+
+            <label>Password</label>
+            <input type="password" name="password" required>
+
+            <label>Confirm Password</label>
+            <input type="password" name="confirm_password" required>
+
+            <button type="submit" class="submit-btn">Register</button>
+        </form>
+    </div>
+</div>
+
+{% endblock content %}

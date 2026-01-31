@@ -1,0 +1,51 @@
+{% extends 'main.html' %} {% block content %}
+<div class="main-content">
+  <h2>This is Booking Page</h2>
+
+  <div class="flight-detail">
+    {% for i in passenger %}
+    <div class="passenger-detail-card">
+      <div class="flight-card">
+        <!-- Passenger Details -->
+        <div class="passenger-card">
+          <div class="passenger-detail">
+            <p><b>Name:</b> {{ i.name }}</p>
+            <p><b>Adhaar:</b> {{ i.adhaar }}</p>
+            <p><b>Age:</b> {{ i.age }}</p>
+            <p><b>Seat Class:</b> {{ i.seat_class.class_name }}</p>
+            <p><b>Seat Number:</b> {{ i.seat_number }}</p>
+            <p><b>Phone Number:</b>{{i.phone}}</p>
+          </div>
+        </div>
+
+        <!-- Flight Details -->
+        <div class="flight-card1">
+          <h3>{{ i.flight.airline }}</h3>
+          <p>
+            {{ i.flight.flight_name }} | Flight No: {{ i.flight.flight_no }}
+          </p>
+
+          <p><b>From:</b> {{ i.flight.departure_city }}</p>
+          <p><b>To:</b> {{ i.flight.destination_city }}</p>
+        </div>
+
+        <div class="flight-card2">
+          <p><b>Departure:</b> {{ i.flight.departure_time }}</p>
+          <p><b>Date:</b> {{ i.flight.date }}</p>
+          <p><b>Price:</b> ₹{{ i.flight.price }}</p>
+        </div>
+      </div>
+      <div class="flight-button">
+        <div class="delete-btn">
+          <a href="{% url 'delete_' i.id %}">Delete Booking</a>
+        </div>
+        <div class="delete-btn">
+          <a href="{% url 'booking' %}">Cancel</a>
+        </div>
+      </div>
+    </div>
+
+    {% endfor %}
+  </div>
+</div>
+{% endblock content %}
