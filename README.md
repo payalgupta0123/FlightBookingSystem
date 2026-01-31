@@ -42,45 +42,43 @@ http://127.0.0.1:8000/
 
 ## 📷 Project Output Screenshots
 
-### Login Page
+### 🔐 Login Page
 
-![Login](screenshots/login.png)
+<img src="screenshots/login.png" width="700"/>
 
-### Register Page
+### 📝 Register Page
 
-![Register](screenshots/register.png)
+<img src="screenshots/register.png" width="700"/>
 
 ### 🏠 Home Page
 
-![Home](screenshots/home.png)
+<img src="screenshots/home.png" width="700"/>
 
-### 🔍 BookNoW Search
+### 🔍 BookNow Search
 
-![BookNow](screenshots/booking_1.png)
-![BookNow](screenshots/booking_2.png)
+<img src="screenshots/booking_1.png" width="700"/>
+<img src="screenshots/booking_2.png" width="700"/>
 
 ### 🎫 Booking Page
 
-![Booking](screenshots/booked.png)
+<img src="screenshots/booked.png" width="700"/>
 
 ### 🕘 Booking History
 
-![History](screenshots/history.png)
+<img src="screenshots/history.png" width="700"/>
 
 ### 👤 Profile Page
 
-![Profile](screenshots/profile.png)
+<img src="screenshots/profile.png" width="700"/>
 
-### 👤 Update Profile
+### ✏️ Update Profile
 
-![Update Profile](screenshots/update_profile.png)
+<img src="screenshots/update_profile.png" width="700"/>
 
 ### 🔐 Reset Password
 
-![Reset Password](screenshots/reset_password_1.png)
-![Reset Password](screenshots/reset_password_2.png)
-
----
+<img src="screenshots/reset_password_1.png" width="700"/>
+<img src="screenshots/reset_password_2.png" width="700"/>
 
 ## 👩‍💻 Author
 
